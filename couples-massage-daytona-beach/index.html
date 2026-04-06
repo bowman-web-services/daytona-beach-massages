@@ -31,6 +31,7 @@
   <div class="info-bar">
     <div class="container info-bar-inner">
       <span class="info-hours">Mon–Sat 10am–8:30pm | Sun 11am–6pm</span>
+      <a href="https://www.google.com/maps/place/1365+Beville+Rd,+Daytona+Beach,+FL+32119" target="_blank" rel="noopener" class="info-address">1365 Beville Rd, Foxboro Plaza, Daytona Beach, FL 32119</a>
       <span class="info-right">
         Walk-Ins Welcome
         <span class="info-divider">|</span>
@@ -74,7 +75,7 @@
 
         <div class="nav-cta">
           <a href="https://bodyampfootmassagespadaytona.setmore.com/book" target="_blank" class="btn btn-book">Book Online</a>
-          <a href="#" data-action="talk-to-ai" class="btn btn-ai">Talk to AI</a>
+          <a href="https://portal.telnyx.com/#/ai-widget-demo?assistantId=assistant-f19ca1b5-061f-4f47-b51c-f6b98039ffdc" target="_blank" rel="noopener" class="btn btn-ai">Talk to AI</a>
           <a href="tel:+13862813248" class="btn btn-call">Call Now</a>
         </div>
       </div>
@@ -405,19 +406,19 @@
     </script>
 
 
-<!-- Mobile Sticky CTA Bar -->
-<div class="mobile-cta-bar">
-  <a href="https://bodyampfootmassagespadaytona.setmore.com/book" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    Book
+<!-- Right-Side Floating Action Buttons -->
+<div class="fab-stack">
+  <a href="https://portal.telnyx.com/#/ai-widget-demo?assistantId=assistant-f19ca1b5-061f-4f47-b51c-f6b98039ffdc" target="_blank" rel="noopener" class="fab fab-ai" aria-label="Chat with AI">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="fab-label">AI Chat</span>
   </a>
-  <a href="#" data-action="talk-to-ai">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    AI Chat
+  <a href="https://bodyampfootmassagespadaytona.setmore.com/book" target="_blank" rel="noopener" class="fab fab-book" aria-label="Book Online">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span class="fab-label">Book</span>
   </a>
-  <a href="tel:+13862813248">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call
+  <a href="tel:+13862813248" class="fab fab-phone" aria-label="Call Now">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span class="fab-label">Call</span>
   </a>
 </div>
 
@@ -450,20 +451,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// === Talk to AI - open Telnyx widget ===
-document.querySelectorAll('[data-action="talk-to-ai"]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    var widget = document.querySelector('telnyx-ai-agent');
-    if (widget && widget.shadowRoot) {
-      var innerBtn = widget.shadowRoot.querySelector('button');
-      if (innerBtn) { innerBtn.click(); return; }
-    }
-    var telnyxBtn = document.querySelector('[class*="telnyx"] button, .telnyx-widget button');
-    if (telnyxBtn) { telnyxBtn.click(); return; }
-    alert('Our AI assistant is loading \u2014 look for the chat bubble in the bottom-right corner!');
-  });
-});
+
 
 // === Mailing list form ===
 var mlForm = document.getElementById('mailing-list-form');
@@ -484,10 +472,6 @@ if (mlForm) {
 }
 </script>
 
-<!-- Telnyx AI Chat Widget -->
-<telnyx-ai-agent
-  agent-id="assistant-f19ca1b5-061f-4f47-b51c-f6b98039ffdc"
-  environment="production"></telnyx-ai-agent>
-<script async src="https://unpkg.com/@telnyx/ai-agent-widget@next"></script>
+
 </body>
 </html>
