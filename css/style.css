@@ -3312,3 +3312,40 @@ section.container.content-section {
 
 /* Hide old fab-container — replaced by fab-stack */
 .fab-container { display: none !important; }
+
+/* ============================================
+   HIDE TELNYX DEFAULT BUBBLE ICON
+   We use our own FAB buttons to trigger it
+   ============================================ */
+telnyx-ai-agent {
+  /* Hide the default floating bubble */
+}
+telnyx-ai-agent::part(trigger),
+telnyx-ai-agent [class*="launcher"],
+telnyx-ai-agent [class*="bubble"] {
+  display: none !important;
+}
+/* If it renders in shadow DOM, target the host container's fixed-position child */
+telnyx-ai-agent:not([open]) {
+  position: fixed;
+  bottom: -200px;
+  right: -200px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+/* When chat is open/active, let it show */
+telnyx-ai-agent[open],
+telnyx-ai-agent:has(iframe),
+telnyx-ai-agent:has([class*="open"]) {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
