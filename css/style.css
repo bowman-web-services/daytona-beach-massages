@@ -1,0 +1,3152 @@
+/* ============================================
+   THE SANCTUARY — Body & Foot Massage Spa Daytona
+   Dark Luxury Spa Theme
+   Mobile-first responsive design
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --bg-deep: #0e0c0a;
+  --bg-card: #1a1714;
+  --bg-card-hover: #231f1a;
+  --text-cream: #f0e6d3;
+  --text-muted: #b8a890;
+  --gold: #c9a96e;
+  --gold-light: #dfc28e;
+  --gold-dark: #a88a50;
+  --terracotta: #9b5e3a;
+  --terracotta-light: #b87a56;
+  --jade: #5a8a76;
+  --jade-light: #7aaa96;
+  --white: #ffffff;
+  --black: #000000;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Roboto, Arial, sans-serif;
+  --max-width: 1200px;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-cream);
+  background-color: var(--bg-deep);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-cream);
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.text-gold { color: var(--gold); }
+.text-cream { color: var(--text-cream); }
+.text-jade { color: var(--jade); }
+
+/* --- Layout --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background-color: var(--bg-card);
+}
+
+/* --- Top Info Bar --- */
+.top-bar {
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.top-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.35rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.top-bar-phone {
+  color: var(--bg-deep);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.top-bar-phone:hover {
+  color: #1a1714;
+}
+
+.top-bar-hours {
+  color: rgba(14, 12, 10, 0.75);
+}
+
+.top-bar-walkins {
+  color: rgba(14, 12, 10, 0.75);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .top-bar-hours { display: none; }
+  .top-bar-walkins { display: none; }
+  .top-bar-inner { justify-content: center; }
+  .top-bar-phone { font-size: 0.9rem; }
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+  top: 30px; /* push below top bar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(14, 12, 10, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  transition: background var(--transition);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.25rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  line-height: 1.15;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Header right side — nav + social + CTA */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+  transition: all var(--transition);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Social icons in header */
+.header-social {
+  display: none;
+}
+
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 360px;
+  height: 100vh;
+  background: var(--bg-deep);
+  border-left: 1px solid rgba(201, 169, 110, 0.15);
+  padding: 5rem 2rem 2rem;
+  transition: right var(--transition);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.main-nav.open {
+  right: 0;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+
+.nav-overlay.show {
+  display: block;
+}
+
+.main-nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.main-nav > ul > li > a {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--text-cream);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a.active {
+  color: var(--gold);
+  padding-left: 0.5rem;
+}
+
+/* Services dropdown — mobile */
+.nav-dropdown-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  color: var(--text-cream);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-dropdown-label::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--gold);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.nav-dropdown.open .nav-dropdown-label::after {
+  content: '−';
+}
+
+.nav-dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding-left: 1rem;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+  max-height: 600px;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.04);
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--gold);
+  padding-left: 0.5rem;
+}
+
+/* Mobile social row in slide-out nav */
+.nav-social {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  margin-top: 0.5rem;
+}
+
+.nav-social a {
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.nav-social a svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--text-muted);
+  transition: fill var(--transition);
+}
+
+.nav-social a:hover svg {
+  fill: var(--gold);
+}
+
+.nav-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 2rem;
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.03em;
+  border-bottom: none !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold-light);
+  color: var(--bg-deep) !important;
+}
+
+.nav-cta-book {
+  background: transparent;
+  color: var(--gold) !important;
+  border: 1.5px solid var(--gold);
+}
+
+.nav-cta-book:hover {
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+}
+
+/* Desktop phone number in header */
+.header-phone-desktop {
+  display: none;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.header-phone-desktop:hover {
+  color: var(--gold-light);
+}
+
+/* Desktop Book Online button in header */
+.header-book-btn {
+  display: none;
+  padding: 0.42rem 1rem;
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  transition: background var(--transition);
+}
+
+.header-book-btn:hover {
+  background: var(--gold-light);
+  color: var(--bg-deep) !important;
+}
+
+/* Phone icon — always visible in header on mobile */
+.header-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.header-phone svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--bg-deep);
+}
+
+/* Desktop nav */
+@media (min-width: 992px) {
+  .menu-toggle { display: none; }
+  .nav-overlay { display: none !important; }
+
+  .header-phone-desktop {
+    display: inline-block;
+  }
+
+  .header-book-btn {
+    display: inline-block;
+  }
+
+  .main-nav {
+    position: static;
+    width: auto;
+    max-width: none;
+    height: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .main-nav > ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .main-nav > ul > li > a {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.88rem;
+    border-bottom: none;
+  }
+
+  .main-nav > ul > li > a:hover,
+  .main-nav > ul > li > a.active {
+    padding-left: 0.65rem;
+  }
+
+  /* Desktop dropdown */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-label {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.88rem;
+    border-bottom: none;
+    color: var(--text-cream);
+    font-family: var(--font-display);
+    cursor: pointer;
+  }
+
+  .nav-dropdown-label::after {
+    content: '▾';
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+  }
+
+  .nav-dropdown.open .nav-dropdown-label::after {
+    content: '▴';
+  }
+
+  .nav-dropdown-label:hover {
+    color: var(--gold);
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(14, 12, 10, 0.97);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: var(--radius);
+    padding: 0.5rem 0;
+    min-width: 240px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    padding-left: 0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.88rem;
+    border-bottom: none;
+    color: var(--text-cream);
+  }
+
+  .nav-dropdown-menu a:hover {
+    background: rgba(201, 169, 110, 0.08);
+    color: var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  .nav-social { display: none; }
+
+  .nav-cta {
+    margin-top: 0;
+    padding: 0.5rem 1.1rem;
+    width: auto;
+    font-size: 0.82rem;
+    border-bottom: none !important;
+  }
+
+  .header-phone { display: none; }
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 9rem 1.25rem 4rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 12, 10, 0.7) 0%,
+    rgba(14, 12, 10, 0.4) 40%,
+    rgba(14, 12, 10, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* When a real image is present */
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* CSS-only atmospheric background when no photo */
+.hero-bg .placeholder-img,
+.hero-bg:empty {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 60%, rgba(155, 94, 58, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 75% 30%, rgba(90, 138, 118, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 60% at 50% 80%, rgba(201, 169, 110, 0.12) 0%, transparent 60%),
+    linear-gradient(160deg, #0e0c0a 0%, #1a1510 25%, #1f1810 45%, #15120e 65%, #0e0c0a 100%);
+  color: transparent;
+  font-size: 0;
+}
+
+/* Subtle animated shimmer overlay */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      120deg,
+      transparent 0px,
+      transparent 80px,
+      rgba(201, 169, 110, 0.02) 80px,
+      rgba(201, 169, 110, 0.02) 82px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 120px,
+      rgba(90, 138, 118, 0.015) 120px,
+      rgba(90, 138, 118, 0.015) 122px
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-cream);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Service page hero (shorter) */
+.hero-service {
+  min-height: 50vh;
+  padding: 9rem 1.25rem 3rem;
+}
+
+.hero-service h1 {
+  font-size: 2.2rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 { font-size: 3.5rem; }
+  .hero-service h1 { font-size: 2.8rem; }
+  .hero { min-height: 90vh; }
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-deep);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  color: var(--bg-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--bg-deep);
+  transform: translateY(-2px);
+}
+
+.btn-phone {
+  background: var(--jade);
+  color: var(--white);
+}
+
+.btn-phone:hover {
+  background: var(--jade-light);
+  color: var(--white);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* --- Service Cards Grid --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 169, 110, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, #2a2420 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.service-card-body {
+  padding: 1.5rem;
+}
+
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--gold);
+  font-size: 1.25rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.service-card .btn {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.5rem;
+}
+
+/* Featured service card (foot massage) */
+.service-card-featured {
+  border-color: var(--gold);
+  position: relative;
+}
+
+.service-card-featured::before {
+  content: 'Our Specialty';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* --- Reviews Section --- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.08);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.review-text {
+  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-cream);
+  margin-bottom: 1rem;
+}
+
+.review-author {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.review-platform {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* --- FAQ Section --- */
+.faq-item {
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+  padding: 1.25rem 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-cream);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  gap: 1rem;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-top: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding-top: 1rem;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+}
+
+/* --- Info Bar (Hours, Phone, Location) --- */
+.info-bar {
+  background: var(--bg-card);
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+  padding: 1.5rem 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.info-item h4 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  color: var(--text-cream);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-item a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: var(--font-body);
+}
+
+/* --- Map Section --- */
+.map-wrap {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(30%) contrast(1.05);
+}
+
+/* --- Section Headers --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.75rem;
+}
+
+.section-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+}
+
+.section-divider {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 1rem auto 0;
+}
+
+/* --- Content Sections (service pages) --- */
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.content-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--gold);
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.content-section ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  list-style: disc;
+}
+
+.content-section ul li {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Pricing table */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.pricing-table th {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.pricing-table td {
+  color: var(--text-cream);
+  font-size: 0.95rem;
+}
+
+.pricing-table tr:hover td {
+  background: rgba(201, 169, 110, 0.04);
+}
+
+.price-highlight {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* --- Geo Page Directions --- */
+.directions-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.directions-box h3 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.directions-box ol {
+  margin-left: 1.25rem;
+  list-style: decimal;
+}
+
+.directions-box ol li {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.footer-col p,
+.footer-col a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.footer-col a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(201, 169, 110, 0.08);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.footer-bottom a {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* --- Utility --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* --- Placeholder Image Blocks --- */
+.placeholder-img {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #2a2420 50%, var(--bg-card) 100%);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  min-height: 200px;
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--terracotta) 0%, var(--gold-dark) 100%);
+  padding: 3.5rem 1.25rem;
+  text-align: center;
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+
+.cta-banner h2 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-banner .btn-primary {
+  background: var(--white);
+  color: var(--terracotta);
+}
+
+.cta-banner .btn-primary:hover {
+  background: var(--text-cream);
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.breadcrumb span {
+  margin: 0 0.4rem;
+  color: rgba(201, 169, 110, 0.3);
+}
+
+/* --- Social Links --- */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--gold);
+}
+
+/* --- Skip to content (accessibility) --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--gold);
+  color: var(--bg-deep);
+  padding: 0.5rem 1rem;
+  z-index: 10000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Mailing List Signup --- */
+.signup-section {
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, rgba(90, 138, 118, 0.06) 100%);
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+  padding: 3rem 0;
+}
+
+.signup-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signup-inner h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup-inner p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.signup-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .signup-row { flex-direction: column; }
+}
+
+.signup-form input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: var(--bg-deep);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: var(--radius);
+  color: var(--text-cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+}
+
+.signup-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.signup-form button {
+  padding: 0.85rem 2rem;
+  background: var(--gold);
+  color: var(--bg-deep);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.signup-form button:hover {
+  background: var(--gold-light);
+}
+
+.signup-success {
+  display: none;
+  padding: 1rem;
+  background: rgba(90, 138, 118, 0.15);
+  border: 1px solid var(--jade);
+  border-radius: var(--radius);
+  color: var(--jade-light);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* --- Telnyx Chat Widget Override --- */
+.telnyx-widget-container {
+  z-index: 900;
+}
+
+/* --- Floating Action Buttons (FAB) --- */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 0 0 rgba(201, 169, 110, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 0 8px rgba(201, 169, 110, 0);
+  }
+  100% {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 0 0 rgba(201, 169, 110, 0);
+  }
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fab-phone {
+  background: var(--gold);
+  animation: pulse-ring 2s infinite;
+}
+
+.fab-phone svg {
+  fill: var(--bg-deep);
+}
+
+.fab-phone:hover {
+  background: var(--gold-light);
+  transform: scale(1.1);
+  animation: none;
+}
+
+.fab-ai {
+  background: var(--jade);
+}
+
+.fab-ai svg {
+  fill: white;
+}
+
+.fab-ai:hover {
+  background: var(--jade-light);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .fab-container {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .fab {
+    width: 48px;
+    height: 48px;
+  }
+
+  .fab svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* --- Footer Grid Update --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 480px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-credit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+/* --- Content Formatting Improvements --- */
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section h2 {
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.content-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.content-section p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-cream);
+}
+
+.styled-list,
+.feature-list,
+.benefit-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.styled-list li,
+.feature-list li,
+.benefit-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+  color: var(--text-cream);
+}
+
+.styled-list li::before,
+.feature-list li::before,
+.benefit-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.content-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 2rem 0;
+  position: relative;
+}
+
+.content-divider::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-light);
+  padding: 0 8px;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-cream);
+  line-height: 1.8;
+}
+
+/* --- Inner Page Hero Improvements --- */
+.hero-service {
+  min-height: 40vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(58, 43, 35, 0.6) 0%, rgba(58, 43, 35, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero-service > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Legal Page Styles --- */
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.8;
+}
+
+.legal-content h2 {
+  color: var(--gold);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.legal-content ul li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  color: var(--text-cream);
+}
+
+.legal-content ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+  color: var(--text-cream);
+}
+
+/* --- Hide Telnyx Default Widget --- */
+telnyx-chat-widget {
+  display: none !important;
+}
+
+/* --- Service Card Price --- */
+.service-card-price {
+  color: var(--gold) !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+}
+
+/* Ensure card images display */
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Floating Action Buttons --- */
+.fab-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 950;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fab-phone {
+  background: var(--gold);
+}
+
+.fab-phone svg {
+  fill: var(--bg-deep);
+}
+
+.fab-ai {
+  background: var(--jade);
+}
+
+.fab-ai svg {
+  fill: var(--white);
+}
+
+@media (max-width: 768px) {
+  .fab-container {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .fab {
+    width: 48px;
+    height: 48px;
+  }
+  .fab svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* --- Footer 4-column grid --- */
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.footer-credit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.footer-credit a {
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   HEADER CTA BUTTONS (3-button group)
+   ============================================ */
+.header-cta-group {
+  display: none; /* hidden on mobile — mobile uses sticky bar */
+}
+
+@media (min-width: 992px) {
+  .header-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.header-cta svg {
+  flex-shrink: 0;
+}
+
+/* Book Online — primary gold */
+.header-cta-book {
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  border-color: var(--gold);
+}
+.header-cta-book:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--bg-deep) !important;
+}
+
+/* Talk to AI — dark fill with gold border */
+.header-cta-ai {
+  background: #3d2e1e;
+  color: var(--gold) !important;
+  border-color: var(--gold);
+}
+.header-cta-ai:hover {
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+}
+
+/* Call Now — dark bg */
+.header-cta-call {
+  background: var(--bg-card);
+  color: var(--gold) !important;
+  border-color: rgba(201, 169, 110, 0.3);
+}
+.header-cta-call:hover {
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  border-color: var(--gold);
+}
+
+/* ============================================
+   TOP BAR — right-group layout fix
+   ============================================ */
+.top-bar-inner {
+  justify-content: space-between;
+}
+
+.top-bar-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .top-bar-inner {
+    justify-content: center;
+  }
+  .top-bar-right-group {
+    margin-left: 0;
+  }
+}
+
+/* ============================================
+   MOBILE STICKY CTA BAR
+   ============================================ */
+.mobile-cta-bar {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9980;
+  background: rgba(14, 12, 10, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(201, 169, 110, 0.2);
+  padding: 0;
+}
+
+.mobile-cta-bar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 0;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background var(--transition);
+}
+
+.mobile-cta-bar a svg {
+  flex-shrink: 0;
+}
+
+.mobile-cta-bar .cta-book {
+  color: var(--bg-deep);
+  background: var(--gold);
+}
+.mobile-cta-bar .cta-book:hover {
+  background: var(--gold-light);
+}
+
+.mobile-cta-bar .cta-ai {
+  color: var(--gold);
+  background: var(--bg-card);
+  border-left: 1px solid rgba(201, 169, 110, 0.15);
+  border-right: 1px solid rgba(201, 169, 110, 0.15);
+}
+.mobile-cta-bar .cta-ai:hover {
+  background: rgba(201, 169, 110, 0.1);
+}
+
+.mobile-cta-bar .cta-call {
+  color: var(--text-cream);
+  background: var(--bg-deep);
+}
+.mobile-cta-bar .cta-call:hover {
+  background: var(--bg-card);
+}
+
+/* Hide mobile bar on desktop, show on mobile */
+@media (min-width: 768px) {
+  .mobile-cta-bar {
+    display: none;
+  }
+}
+
+/* Add bottom padding to body on mobile so content isn't hidden behind sticky bar */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* ============================================
+   FOOTER CTA ROW
+   ============================================ */
+.footer-cta {
+  background: var(--bg-card);
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.footer-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.footer-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-cta-buttons .btn-book {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.footer-cta-buttons .btn-book:hover {
+  background: var(--gold-light);
+  color: var(--bg-deep) !important;
+}
+
+.footer-cta-buttons .btn-call {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background: #3d2e1e;
+  color: var(--gold) !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--gold);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.footer-cta-buttons .btn-call:hover {
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+}
+
+/* ============================================
+   AI TOOLTIP ANIMATION
+   ============================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================
+   NEW HEADER — COMPLETE REBUILD
+   ============================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Info Bar */
+.info-bar {
+  background: #1a1a1a;
+  color: #c9a96e;
+  font-size: 0.8rem;
+  padding: 6px 0;
+  letter-spacing: 0.5px;
+}
+.info-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.info-bar a { color: #c9a96e; text-decoration: none; }
+.info-bar a:hover { color: #fff; }
+.info-divider { margin: 0 6px; opacity: 0.5; }
+
+/* Main Nav */
+header .main-nav {
+  background: #2a1f14;
+  padding: 0;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  position: static;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border-left: none;
+  right: auto;
+  overflow: visible;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 56px;
+  gap: 8px;
+}
+.brand {
+  color: #c9a96e;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 16px;
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+.brand:hover { color: #e0c080; }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-links li { position: relative; }
+.nav-links a {
+  color: #d4c4a0;
+  text-decoration: none;
+  font-size: 0.84rem;
+  padding: 18px 10px;
+  display: block;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #c9a96e; }
+.dropdown-trigger { cursor: pointer; }
+.arrow { font-size: 0.7em; margin-left: 2px; }
+
+/* Services Dropdown - Wide, Two Columns */
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown { display: grid; }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a1f14;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  min-width: 420px;
+  z-index: 1001;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  grid-template-columns: 1fr 1fr;
+  padding: 8px 0;
+  border-radius: 0 0 6px 6px;
+  list-style: none;
+}
+.dropdown li { list-style: none; }
+.dropdown a {
+  padding: 10px 20px;
+  font-size: 0.84rem;
+  color: #d4c4a0;
+  display: block;
+  transition: background 0.15s, color 0.15s;
+}
+.dropdown a:hover {
+  background: rgba(201, 169, 110, 0.1);
+  color: #c9a96e;
+}
+
+/* ============================================
+   CTA BUTTONS - Used everywhere
+   ============================================ */
+.nav-cta, .hero-cta, .page-cta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.nav-cta {
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+/* Compact button sizing inside header nav */
+.nav-cta .btn {
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.btn-lg { padding: 14px 28px; font-size: 1rem; }
+
+.btn-book {
+  background: #c9a96e;
+  color: #1a1a1a !important;
+  border: 1px solid #c9a96e;
+}
+.btn-book:hover { background: #e0c080; border-color: #e0c080; color: #1a1a1a !important; }
+
+.btn-ai {
+  background: #3d2e1e;
+  color: #c9a96e;
+  border: 1px solid #c9a96e;
+}
+.btn-ai:hover {
+  background: #c9a96e;
+  color: #1a1a1a;
+}
+
+.btn-call {
+  background: #3d2e1e;
+  color: #c9a96e;
+  border: 1px solid #c9a96e;
+}
+.btn-call:hover {
+  background: #c9a96e;
+  color: #1a1a1a !important;
+}
+
+/* Hero CTA centering */
+.hero-cta {
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Page CTA centering */
+.page-cta {
+  justify-content: center;
+  margin: 32px 0;
+}
+
+/* Hamburger - hidden on desktop */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #c9a96e;
+  transition: all 0.3s;
+}
+.hamburger { position: relative; }
+.hamburger::before,
+.hamburger::after { content: ''; position: absolute; left: 0; }
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+/* ============================================
+   MOBILE OVERRIDES
+   ============================================ */
+@media (max-width: 1024px) {
+  .info-hours { display: none; }
+  .info-bar-inner { justify-content: flex-end; }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2a1f14;
+    border-top: 1px solid rgba(201, 169, 110, 0.2);
+    padding: 16px 0;
+    z-index: 999;
+  }
+  .nav-menu.active { display: flex; }
+  .nav-links { flex-direction: column; width: 100%; }
+  .nav-links a {
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+  }
+  .dropdown {
+    position: static;
+    border: none;
+    box-shadow: none;
+    background: rgba(0,0,0,0.15);
+    min-width: 100%;
+    grid-template-columns: 1fr;
+    transform: none;
+  }
+  .dropdown a { padding-left: 40px; }
+  .nav-cta {
+    flex-direction: column;
+    margin: 16px 24px 0;
+    gap: 10px;
+  }
+  .nav-cta .btn { text-align: center; padding: 12px 16px; justify-content: center; }
+  .nav-inner { position: relative; flex-wrap: wrap; }
+
+  /* Hero buttons stack on mobile */
+  .hero-cta { flex-direction: column; align-items: center; }
+  .page-cta { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+  .brand { font-size: 0.95rem; }
+  .info-bar { font-size: 0.7rem; }
+}
+
+/* ============================================
+   MOBILE STICKY BOTTOM BAR (new)
+   ============================================ */
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2a1f14;
+  border-top: 1px solid rgba(201, 169, 110, 0.3);
+  z-index: 998;
+  padding: 0;
+}
+.mobile-cta-bar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 4px;
+  color: #c9a96e;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s;
+}
+.mobile-cta-bar a:hover,
+.mobile-cta-bar a:active {
+  background: rgba(201, 169, 110, 0.15);
+}
+.mobile-cta-bar svg { stroke: #c9a96e; }
+
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: flex; }
+  body { padding-bottom: 70px; }
+}
+
+/* ============================================
+   GLOBAL CONTENT CENTERING FIX
+   Ensures all sections flow in a centered column
+   ============================================ */
+
+/* 1. Hero content — always centered within flex parent */
+.hero-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2. Section headings — center all h2s used as section titles */
+section h2,
+.section-title {
+  text-align: center;
+}
+
+/* 3. Section intro text — centered column, text left-aligned */
+section > p:first-of-type,
+.section-intro {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 4. Pricing tables — centered in their container */
+.pricing-table,
+.pricing-section table {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+/* 5. Content inner wrappers — center within container */
+.content-inner {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 6. Review cards — center text within each card */
+.review-card {
+  text-align: center;
+}
+
+/* 7. Reviews grid — ensure centered group */
+.reviews-grid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 8. FAQ section — centered column */
+.faq-list,
+.faq-section {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 9. CTA sections — centered buttons */
+.hero-cta,
+.page-cta,
+.footer-cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 10. Page hero (about, contact, geo pages) — center text */
+.page-hero {
+  text-align: center;
+  padding: 6rem 1.25rem 3rem;
+  position: relative;
+}
+
+.page-hero h1 {
+  text-align: center;
+}
+
+.page-hero p {
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 11. Service page sections inside main.container — center */
+main.container .pricing-section,
+main.container .reviews-section {
+  max-width: 100%;
+}
+
+main.container .pricing-section .section-header,
+main.container .reviews-section .section-header {
+  text-align: center;
+}
+
+/* 12. CTA banner — ensure text and buttons center */
+.cta-banner {
+  text-align: center;
+}
+
+.cta-banner .btn-group {
+  justify-content: center;
+}
+
+/* 13. Contact info section */
+.contact-info-section {
+  text-align: center;
+}
+
+/* 14. Directions section centering */
+.directions-section {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 15. Map section centering */
+.map-section .map-wrap {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 16. Footer grid — centered within container */
+.footer-grid {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 17. Signup section form — already centered via .signup-inner but reinforce */
+.signup-section {
+  text-align: center;
+}
+
+/* 18. Section content blocks (couples, four-hands pages) */
+.section-content {
+  padding: 3rem 0;
+}
+
+.section-content .container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 18b. Content block — constrain and center like .content-section */
+.content-block {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-block h2 {
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.content-block h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.content-block h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--gold);
+}
+
+.content-block p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-cream);
+}
+
+.content-block ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  list-style: disc;
+}
+
+.content-block ul li {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.content-block ol li {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* 18c. Feature/benefit grids inside content-block (four-hands, couples) */
+.feature-grid,
+.benefits-showcase,
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.feature-card,
+.benefit-item,
+.why-us-card {
+  background: var(--bg-card, rgba(201, 169, 110, 0.05));
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: var(--radius, 8px);
+  padding: 1.5rem;
+}
+
+.feature-card h3,
+.benefit-item h3,
+.why-us-card h3 {
+  color: var(--gold);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.feature-card p,
+.benefit-item p,
+.why-us-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.feature-highlight {
+  margin-bottom: 2rem;
+}
+
+.feature-highlight h3 {
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+/* 19. Legal content pages — reinforce centering */
+.legal-content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 20. Content section text centering for headings */
+.content-section h2 {
+  text-align: center;
+}
+
+/* 21. Pricing section header centering */
+.pricing-section .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-section .section-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 22. Reviews section header centering */
+.reviews-section .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reviews-section .section-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 23. CTA section centering */
+.cta-section {
+  text-align: center;
+}
+
+.cta-section .btn-group {
+  justify-content: center;
+}
+
+/* 24. About page team/info centering */
+.about-content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 25. Reviews links section centering */
+.reviews-links-section {
+  text-align: center;
+}
+
+/* 26. Contact hero CTA centering */
+.contact-hero-cta {
+  text-align: center;
+}
+
+.contact-hero-cta .btn-group {
+  justify-content: center;
+}
+
+/* 27. About page — intro layout (image + text centered) */
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.about-intro .about-text {
+  max-width: 700px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .about-intro {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* 28. Values grid — centered card grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 1.5rem auto 2rem;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.value-card h3 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* 29. Commitment and experience lists — centered column */
+.commitment-list,
+.experience-list,
+.reflexology-list,
+.expectation-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 700px;
+  margin: 1rem auto 1.5rem;
+}
+
+.commitment-list li,
+.experience-list li,
+.reflexology-list li,
+.expectation-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+  color: var(--text-cream);
+}
+
+.commitment-list li::before,
+.experience-list li::before,
+.reflexology-list li::before,
+.expectation-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* 30. Location box — centered */
+.location-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.location-box h3 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.location-box a.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.location-box a.cta-button:hover {
+  background: var(--gold-light);
+}
+
+/* 31. Contact grid — centered columns */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-box {
+  padding: 1.5rem;
+}
+
+.contact-box h2 {
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.contact-phone {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* 32. Directions section — centered layout */
+.directions-tabs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 1.5rem auto;
+}
+
+@media (min-width: 768px) {
+  .directions-tabs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.directions-group {
+  padding: 1rem;
+}
+
+.directions-group h3 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* Storefront box — centered */
+.storefront-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .storefront-box {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.storefront-text h3 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* 33. Social links — centered buttons */
+.reviews-links-section .social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: var(--radius);
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.social-button:hover {
+  background: var(--gold);
+  color: var(--bg-deep);
+}
+
+/* 34. FAQ grid (contact page) — centered */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 800px;
+  margin: 1.5rem auto;
+}
+
+@media (min-width: 768px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faq-grid .faq-item {
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 169, 110, 0.08);
+  border-radius: var(--radius);
+}
+
+.faq-grid .faq-item h4 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* 35. CTA button large (contact page) */
+.cta-button-large {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.cta-button-large:hover {
+  background: var(--gold-light);
+  color: var(--bg-deep);
+}
+
+/* 36. Map container centering */
+.map-container {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.map-container iframe {
+  width: 100%;
+  display: block;
+  filter: grayscale(30%) contrast(1.05);
+}
+
+/* 37. Geo pages service cards (inside container section) */
+.content-section .services-grid {
+  max-width: 1000px;
+  margin: 1.5rem auto;
+}
+
+.content-section .services-grid .service-card {
+  padding: 1.25rem;
+}
+
+.content-section .services-grid .service-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* 38. Hero subtitle — centered */
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 39. Phone CTA block — centered */
+.phone-cta {
+  text-align: center;
+}
+
+.cta-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* 40. Lead text — centered */
+.lead-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-cream);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   NUCLEAR CENTERING — SITE-WIDE FINAL OVERRIDE
+   Everything inside <main> is centered.
+   This block is last in the file — it wins.
+   ============================================ */
+
+/* ALL paragraphs everywhere — centered */
+main p,
+section p,
+article p,
+.content-section p,
+.content-inner p,
+.text-content p,
+.benefit-card p,
+.expectation-item p,
+.expectations-list p,
+.how-works-item p,
+.session-description p,
+.price-card p,
+.price-desc,
+.value-card p,
+.why-us-card p,
+.feature-card p,
+.massage-type-card p,
+.comparison-col p,
+.corporate-list p,
+.commitment-list p,
+.storefront-text p,
+.faq-answer,
+.lead-text {
+  text-align: center;
+}
+
+/* ALL headings — centered */
+main h1, main h2, main h3, main h4, main h5,
+section h1, section h2, section h3, section h4,
+.content-section h2, .content-section h3, .content-section h4,
+.content-inner h2, .content-inner h3, .content-inner h4,
+.text-content h2, .text-content h3, .text-content h4,
+.benefit-card h3, .benefit-card h4,
+.expectation-item h3,
+.how-works-item h3,
+.value-card h3, .value-card h4,
+.why-us-card h3,
+.feature-card h3,
+.massage-type-card h3,
+.price-card h3, .price-card .price,
+.storefront-text h3,
+.faq-question {
+  text-align: center;
+}
+
+/* ALL list items — centered */
+main li,
+.content-section li,
+.content-inner li,
+.benefit-list li,
+.feature-list li,
+.benefits-list li,
+.commitment-list li,
+.corporate-list li,
+.ideal-clients-list li,
+.experience-list li,
+.comparison-list li,
+.unique-features li,
+.reflexology-list li,
+.how-works-list li,
+.faq-grid li {
+  text-align: center;
+}
+
+/* ALL content containers — column centered on page */
+.content-section,
+.content-inner,
+.text-content,
+.benefit-card,
+.expectation-item,
+.how-works-item,
+.session-description,
+.value-card,
+.why-us-card,
+.feature-card,
+.massage-type-card,
+.storefront-text,
+.price-card,
+.faq-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grids that wrap cards — centered as a group */
+.benefits-grid,
+.features-grid,
+.values-grid,
+.why-us-grid,
+.massage-types-grid,
+.how-works-list,
+.expectations-list,
+.pricing-grid {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+/* Pricing table cells — override to center (overrides the left from line 1111) */
+.pricing-table th,
+.pricing-table td {
+  text-align: center;
+}
+
+/* Section containers — centered column */
+section.content-section,
+section.container.content-section {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Pattern B: container nested inside content-section */
+.content-section > .container {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* two-column layout: center both columns' text */
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.two-column .text-content {
+  flex: 1 1 400px;
+  text-align: center;
+}
+.two-column .image-placeholder {
+  flex: 1 1 300px;
+}
+
+/* comparison table — center all cells */
+.comparison-col,
+.comparison-row,
+.comparison-table {
+  text-align: center;
+}
+
+/* Nav/header/footer — not affected (specific enough selectors above) */
+
+/* ============================================
+   END NUCLEAR CENTERING
+   ============================================ */

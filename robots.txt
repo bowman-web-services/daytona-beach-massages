@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://daytonabeachmassages.com/sitemap.xml
+
+# Block WordPress remnant paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /wp-json/

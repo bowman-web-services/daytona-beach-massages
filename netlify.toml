@@ -1,0 +1,98 @@
+[build]
+  publish = "."
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-XSS-Protection = "1; mode=block"
+
+# WordPress remnant redirects — 410 Gone
+[[redirects]]
+  from = "/category/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/tag/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/author/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-json/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/feed/"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/feed"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 410
+  force = true
+
+# Block leaked Python scripts and deploy ZIPs
+[[redirects]]
+  from = "/*.py"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/deploy-*.zip"
+  to = "/"
+  status = 410
+  force = true

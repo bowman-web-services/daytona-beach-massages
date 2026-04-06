@@ -1,35 +1,37 @@
 # CLAUDE.md — Daytona Beach Massages
 
 **Owner:** Tom Bowman / Bowman Web Services LLC
-**Type:** Hugo static site — local service business
+**Type:** Static HTML site (no Hugo SSG)
 **Domain:** daytonabeachmassages.com
-**Status:** Live on Netlify, DNS flipped. "Sanctuary" design deployed.
+**Netlify Site ID:** e0bd9826-8992-4f10-b9ce-872cc9619390
+**Netlify Name:** daytona-beach-massages
+**Status:** Live on Netlify, DNS on Namecheap (A→75.2.60.5)
 
 ---
 
 ## Project Overview
 
-Massage therapy service website for the Daytona Beach area. Recently rebuilt with "Sanctuary" design and deployed to Netlify. The old WordPress site domain cutover is pending — need to fully decommission the WordPress version.
+Massage therapy service website for Body & Foot Massage Spa in Daytona Beach. "Sanctuary" design. 18 HTML pages, no Hugo — plain static HTML deployed to Netlify.
 
 ## Tech Stack
 
-- **SSG:** Hugo on Netlify
-- **Design:** "Sanctuary" theme/layout
+- **Framework:** Static HTML/CSS/JS (no SSG)
 - **Hosting:** Netlify (auto-deploy from GitHub push)
+- **DNS:** Namecheap (A record → Netlify LB 75.2.60.5)
+- **Analytics:** GA4 G-GRDQRHXRJH (direct gtag, no GTM)
+- **Telnyx Agent:** assistant-f19ca1b5
+- **Booking:** Setmore integration
 
 ## Deployment
 
-- Push to GitHub → Netlify auto-builds
+- Push to `main` branch → Netlify auto-builds from publish = "."
 - Do NOT use Netlify CLI
-- Never run `hugo build` locally on Cowork VM
+- netlify.toml handles security headers and WP redirect rules
 
-## Pending Tasks
+## SEO Notes (Updated 2026-04-06)
 
-- Complete domain cutover from old WordPress site
-- Import any remaining content from WordPress version
-
-## Cowork / Claude Code Notes
-
-- Cowork bindfs blocks standard git operations
-- Always clone to `/tmp`, copy files, commit/push from there
-- Check `df -h /` before bulk operations
+- Schema: LocalBusiness + MassageTherapist + FAQPage
+- Each page has: meta description, canonical, og:image
+- Sitemap includes all service + geo pages (15 total)
+- Old WordPress URLs → 410 Gone via netlify.toml
+- BWS centering standard applied
