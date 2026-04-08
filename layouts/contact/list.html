@@ -1,0 +1,112 @@
+{ define "main" }
+<div class="page-hero" style="background:linear-gradient(135deg,#1a2f1a 0%,#c9a96e 100%);color:#fff;padding:3rem 0 2.5rem;text-align:center;">
+  <div class="container">
+    <h1 style="font-size:2rem;margin-bottom:.5rem;">Book Your Massage</h1>
+    <p style="opacity:.9;">Tell us about your project — we'll get back to you same day.</p>
+  </div>
+</div>
+<section style="padding:3rem 0;">
+  <div class="container">
+    <div class="page-content">{{ .Content }}</div>
+    <div style="max-width:620px;margin:2rem auto 0;">
+      <form id="svc-form-0587af" onsubmit="submitSvcForm(event,'0587af')" novalidate>
+
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;"><div style="flex:1;min-width:180px;margin-bottom:.85rem;"><label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Your Name *</label><input type="text" name="name" required placeholder="First & Last Name" style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'"></div><div style="flex:1;min-width:180px;margin-bottom:.85rem;"><label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Phone *</label><input type="tel" name="phone" required placeholder="555-000-0000" style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'"></div></div>
+
+        <div style="margin-bottom:.85rem;">
+          <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Email *</label>
+          <input type="email" name="email" required placeholder="you@example.com" style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'">
+        </div>
+
+        <div style="margin-bottom:.85rem;">
+          <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Service Address / City *</label>
+          <input type="text" name="location" required placeholder="Street address or city" style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'">
+        </div>
+
+        <div style="margin-bottom:.85rem;">
+          <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Service Needed *</label>
+          <select name="service" required style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'">
+            <option value="">— Select service —</option>
+            <option value="Swedish Massage">Swedish Massage</option>
+<option value="Deep Tissue Massage">Deep Tissue Massage</option>
+<option value="Hot Stone Massage">Hot Stone Massage</option>
+<option value="Couples Massage">Couples Massage</option>
+<option value="Sports Massage">Sports Massage</option>
+<option value="Prenatal Massage">Prenatal Massage</option>
+<option value="Reflexology">Reflexology</option>
+<option value="Other / Not Sure">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:.85rem;">
+          <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">When do you need it?</label>
+          <select name="urgency" style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'">
+            <option value="ASAP">As soon as possible</option>
+            <option value="This week">This week</option>
+            <option value="Within a month">Within a month</option>
+            <option value="Just getting quotes">Just getting quotes</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:.85rem;">
+          <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:.3rem;color:#333;">Tell us more about the job</label>
+          <textarea name="notes" rows="3" placeholder="Describe what you need done. Gated community, dogs on property, parking restrictions, accessibility needs — anything we should know before we arrive." style="width:100%;padding:.65rem .9rem;border:2px solid #ddd;border-radius:6px;font-size:.95rem;box-sizing:border-box;font-family:inherit;transition:border-color .2s;resize:vertical;" onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd'"></textarea>
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:flex;align-items:center;gap:.5rem;font-size:.9rem;cursor:pointer;">
+            <input type="checkbox" name="subscribe" style="accent-color:#c9a96e;width:16px;height:16px;">
+            <span>☑ Subscribe me to seasonal tips and specials</span>
+          </label>
+        </div>
+
+        <button type="submit" id="svc-btn-0587af" style="width:100%;background:#c9a96e;color:#fff;font-weight:700;font-size:1rem;padding:.85rem;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:all .2s;">
+          Send My Request
+        </button>
+        <div id="svc-msg-0587af" style="display:none;margin-top:1rem;padding:1.25rem;border-radius:6px;text-align:center;font-size:.95rem;font-weight:600;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+function submitSvcForm(e, id) {
+  e.preventDefault();
+  var form = document.getElementById('svc-form-' + id);
+  var btn  = document.getElementById('svc-btn-' + id);
+  var msg  = document.getElementById('svc-msg-' + id);
+  var name  = form.querySelector('[name="name"]').value.trim();
+  var phone = form.querySelector('[name="phone"]').value.trim();
+  var email = form.querySelector('[name="email"]').value.trim();
+  var svc   = form.querySelector('[name="service"]').value;
+  var loc   = form.querySelector('[name="location"]').value.trim();
+  if (!name || !phone || !email || !svc || !loc) {
+    msg.style.display='block'; msg.style.background='#fef2f2'; msg.style.color='#991b1b';
+    msg.textContent='Please fill in all required fields.'; return;
+  }
+  btn.disabled=true; btn.textContent='Sending...'; btn.style.opacity='0.7';
+  fetch('https://n8n.srv1232181.hstgr.cloud/webhook/0587af7f-8ea8-4bb9-aad0-41e2c413000c', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      caller_name: name, phone: phone, email: email, business_name: 'N/A',
+      location: loc, service_requested: svc,
+      urgency: form.querySelector('[name="urgency"]').value,
+      notes: form.querySelector('[name="notes"]').value.trim() || 'No notes',
+      lead_source: window.location.href,
+      subscribe: form.querySelector('[name="subscribe"]').checked
+    })
+  })
+  .then(function(r) {
+    if(r.ok) {
+      form.style.display='none'; msg.style.display='block';
+      msg.style.background='#f0fdf4'; msg.style.color='#166534';
+      msg.innerHTML='✅ <strong>Request received!</strong><br><br>We\'ll follow up at ' + email + ' or call ' + phone + ' — usually same day.';
+    } else { throw new Error(); }
+  })
+  .catch(function() {
+    btn.disabled=false; btn.textContent='Send My Request'; btn.style.opacity='1';
+    msg.style.display='block'; msg.style.background='#fef2f2'; msg.style.color='#991b1b';
+    msg.textContent='Something went wrong — please contact us directly';
+  });
+}
+</script>
+{{ end }}
