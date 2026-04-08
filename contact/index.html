@@ -299,7 +299,7 @@
         <div class="signup-inner">
           <h2>Get Exclusive Offers &amp; Updates</h2>
           <p>Sign up and be the first to hear about specials, seasonal promotions, and new services.</p>
-          <form class="signup-form" name="mailing-list" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/">
+          <form class="signup-form" id="mailing-list-form" name="mailing-list" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
             <input type="hidden" name="form-name" value="mailing-list">
             <input type="hidden" name="source-page" value="contact">
             <p style="display:none"><input name="bot-field"></p>
@@ -312,6 +312,9 @@
               <button type="submit">Sign Up</button>
             </div>
           </form>
+          <div id="mailing-success" style="display:none;">
+            &#10003; Thanks! We'll keep you posted on specials and new services.
+          </div>
         </div>
       </div>
     </section>
