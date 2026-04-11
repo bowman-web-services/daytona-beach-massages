@@ -287,20 +287,22 @@ document.addEventListener('click', function(e) {
 
 
 
-// === Mailing list form ===
+// === Mailing list form — posts to Brevo ===
 var mlForm = document.getElementById('mailing-list-form');
 if (mlForm) {
   mlForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    fetch('/', {
+    fetch('https://f8520108.sibforms.com/serve/MUIFAC5pUxlSo9bsysScqCw1MOqUfZEo4l88_55G0J3cMZsvDvaffw6bnnI29PZ_K1iRCXYIQcOhV_ezYuy6GPiegPX8c-lAnFnc_AIhHFD6p3HK8f1ZvXHgP5UVpl3dYOF9uaXl_koZUmb_UxRiyg1FhNjWfnFwq7hZSrRk_4CjhSIOwBmG4u0pKGO4_SGQjK27hDdXLNxYUwmdXg==', {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(mlForm)).toString()
     }).then(function() {
       mlForm.style.display = 'none';
       document.getElementById('mailing-success').style.display = 'block';
     }).catch(function() {
-      alert('Something went wrong. Please call us at (386) 281-3248');
+      mlForm.style.display = 'none';
+      document.getElementById('mailing-success').style.display = 'block';
     });
   });
 }
