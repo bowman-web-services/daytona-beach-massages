@@ -464,15 +464,19 @@ document.addEventListener('click', function(e) {
 
 
 
-// === Mailing list form ===
+// === Mailing list form — direct Brevo API ===
 var mlForm = document.getElementById('mailing-list-form');
 if (mlForm) {
   mlForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    fetch('/', {
+    var email = mlForm.querySelector('[name="email"]').value;
+    fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(mlForm)).toString()
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': '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'
+      },
+      body: JSON.stringify({ email: email, listIds: [10], updateEnabled: true })
     }).then(function() {
       mlForm.style.display = 'none';
       document.getElementById('mailing-success').style.display = 'block';
