@@ -1417,6 +1417,30 @@ p {
   background: var(--gold-light);
 }
 
+#mailing-list-form input[type="email"] {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-cream);
+  margin-bottom: 0.5rem;
+}
+
+#mailing-list-form input[type="email"]::placeholder {
+  color: var(--text-muted);
+}
+
+#mailing-list-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+#mailing-list-form button {
+  width: 100%;
+}
+
 .signup-success {
   display: none;
   padding: 1rem;
